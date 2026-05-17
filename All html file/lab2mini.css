@@ -1,0 +1,56 @@
+/* Universal Selector */
+*{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body{
+    background-color: #f0f0f0;
+    padding: 30px;
+}
+
+/* ID Selector */
+#title{
+    color: red;
+    margin-bottom: 20px;
+}
+
+/* Group Selector */
+h2, h3{
+    color: green;
+    margin-top: 15px;
+}
+
+/* Element Selector */
+p{
+    color: blue;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Class Selector */
+.box{
+    background-color: yellow;
+    padding: 20px;
+    width: 300px;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+/* Button Design */
+button{
+    padding: 10px 20px;
+    background-color: skyblue;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Hover Selector */
+button:hover{
+    background-color: black;
+    color: white;
+}

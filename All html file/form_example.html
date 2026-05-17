@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML ফর্মের সব এলিমেন্ট - উদাহরণ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            background: #fefefe;
+        }
+        legend {
+            font-weight: bold;
+            background: #2c3e50;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1e466e;
+        }
+        input, select, textarea, datalist, output, button {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        output {
+            background: #e9ecef;
+            display: inline-block;
+            width: auto;
+            font-weight: bold;
+            text-align: center;
+        }
+        button {
+            background: #2c3e50;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 5px;
+        }
+        button:hover {
+            background: #1a2a38;
+        }
+        .inline-output {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 8px;
+            border-left: 4px solid #2c3e50;
+        }
+        small {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>📝 HTML ফর্মের সব এলিমেন্টের উদাহরণ</h2>
+    <form action="#" method="post" oninput="result.value = `${rangeInput.value}%`">
+        <!-- 1. <input> + <label> + <datalist> + <output> এর মিশ্রণ -->
+        <div class="form-group">
+            <label for="fullname">👤 আপনার নাম (input text) :</label>
+            <input type="text" id="fullname" name="fullname" placeholder="যেমন: রবি কুমার" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">📧 ইমেইল (input email) :</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com">
+        </div>
+
+        <!-- <datalist> + <input> (সাজেশন সহ ইনপুট) -->
+        <div class="form-group">
+            <label for="city">🏙️ পছন্দের শহর (datalist) :</label>
+            <input list="cities" id="city" name="city" placeholder="টাইপ করতে থাকুন...">
+            <datalist id="cities">
+                <option value="ঢাকা">
+                <option value="চট্টগ্রাম">
+                <option value="রাজশাহী">
+                <option value="খুলনা">
+                <option value="সিলেট">
+            </datalist>
+            <small>ডাটালিস্ট - লেখার সময় অপশন দেখাবে</small>
+        </div>
+
+        <!-- <select> + <optgroup> + <option> -->
+        <div class="form-group">
+            <label for="country">🌍 দেশ নির্বাচন (select + optgroup) :</label>
+            <select id="country" name="country">
+                <optgroup label="দক্ষিণ এশিয়া">
+                    <option value="bd">বাংলাদেশ</option>
+                    <option value="in">ভারত</option>
+                    <option value="pk">পাকিস্তান</option>
+                </optgroup>
+                <optgroup label="ইউরোপ">
+                    <option value="uk">যুক্তরাজ্য</option>
+                    <option value="fr">ফ্রান্স</option>
+                </optgroup>
+                <optgroup label="অন্য">
+                    <option value="usa">যুক্তরাষ্ট্র</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- <textarea> -->
+        <div class="form-group">
+            <label for="message">📄 আপনার বক্তব্য (textarea) :</label>
+            <textarea id="message" name="message" rows="3" placeholder="এখানে কিছু লিখুন..."></textarea>
+        </div>
+
+        <!-- <fieldset> + <legend> - গ্রুপিং -->
+        <fieldset>
+            <legend>⚙️ আপনার পছন্দের বিষয় (checkbox + radio)</legend>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal;">
+                    <input type="checkbox" name="interest" value="web"> ওয়েব ডেভেলপমেন্ট
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal;">
+                    <input type="checkbox" name="interest" value="ai"> আর্টিফিশিয়াল ইন্টেলিজেন্স
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal;">
+                    <input type="checkbox" name="interest" value="design"> গ্রাফিক ডিজাইন
+                </label>
+            </div>
+            <div style="margin-top: 12px;">
+                <p style="margin: 6px 0 5px 0;">⭐ লিঙ্গ (radio) :</p>
+                <label style="display: inline-flex; align-items: center; gap: 5px; margin-right: 15px; font-weight: normal;">
+                    <input type="radio" name="gender" value="male"> পুরুষ
+                </label>
+                <label style="display: inline-flex; align-items: center; gap: 5px; margin-right: 15px; font-weight: normal;">
+                    <input type="radio" name="gender" value="female"> নারী
+                </label>
+                <label style="display: inline-flex; align-items: center; gap: 5px; font-weight: normal;">
+                    <input type="radio" name="gender" value="other"> অন্যান্য
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- <output> এলিমেন্ট (JavaScript ছাড়াই oninput দিয়ে দেখানো) -->
+        <div class="form-group">
+            <label for="rangeInput">📊 অগ্রগতি (আউটপুট দেখুন) :</label>
+            <input type="range" id="rangeInput" name="progress" min="0" max="100" value="50">
+            <div class="inline-output">
+                🧮 আপনার মান: <output name="result" id="result">50</output> %
+            </div>
+            <small><code>&lt;output&gt;</code> এলিমেন্ট range স্লাইডারের মান দেখাচ্ছে (oninput ইভেন্ট ব্যবহার করে)</small>
+        </div>
+
+        <!-- <button> সাবমিট ও সাধারণ বাটন -->
+        <div style="display: flex; gap: 12px; margin-top: 15px;">
+            <button type="submit">✅ সাবমিট করুন (button)</button>
+            <button type="reset" style="background: #6c757d;">🗑️ রিসেট করুন</button>
+        </div>
+
+        <hr>
+        <p style="font-size: 0.85rem; text-align: center; color: #2c3e50;">
+            📌 এখানে <strong>&lt;input&gt;, &lt;label&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;button&gt;, &lt;fieldset&gt;, &lt;legend&gt;, &lt;datalist&gt;, &lt;output&gt;, &lt;option&gt;, &lt;optgroup&gt;</strong> সব এলিমেন্ট ব্যবহার করা হয়েছে।
+        </p>
+    </form>
+</div>
+</body>
+</html>

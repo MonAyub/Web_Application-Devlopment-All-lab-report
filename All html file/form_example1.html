@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>এইটা ইনপুট, এইটা টেক্সটএরিয়া, ডাটালিস্ট, অপশন – সব এলিমেন্ট</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eef2f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 30px 20px;
+        }
+        .main {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 25px 30px 35px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            color: #1e3c5c;
+            border-bottom: 3px solid #ffb74d;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 20px;
+            padding-bottom: 6px;
+        }
+        .title-wrap {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .element-card {
+            background: #f9fafc;
+            border-left: 6px solid #2c7da0;
+            margin-bottom: 25px;
+            padding: 18px 20px;
+            border-radius: 18px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .element-label {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: #2c7da0;
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 30px;
+            color: white;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+        .element-label span {
+            font-family: monospace;
+            background: #ffecb3;
+            color: #b45f06;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+        .demo-area {
+            margin-top: 12px;
+            padding: 10px 0;
+        }
+        input, textarea, select, button {
+            padding: 10px 14px;
+            border: 1px solid #bac8d9;
+            border-radius: 14px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 400px;
+            font-family: inherit;
+        }
+        textarea {
+            width: 100%;
+            max-width: 500px;
+        }
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .info-text {
+            background: #fff4e5;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #a7582c;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-family: monospace;
+        }
+        hr {
+            margin: 18px 0;
+            border: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        .badge {
+            background: #d4e3f0;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: normal;
+            margin-left: 8px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #4a627a;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="title-wrap">
+        <h1>📌 এইটা <code>&lt;input&gt;</code> , এইটা <code>&lt;textarea&gt;</code> , এইটা <code>&lt;datalist&gt;</code> , এইটা <code>&lt;option&gt;</code> ...</h1>
+        <p style="margin-top: 8px;">নিচের প্রতিটি বক্সে ফর্ম এলিমেন্টের নাম বাংলায় লেখা আছে — দেখুন ও বুঝুন</p>
+    </div>
+
+    <!-- 1. INPUT element -->
+    <div class="element-card">
+        <div class="element-label">📥 এইটা <code>&lt;input&gt;</code> এলিমেন্ট <span>ইনপুট ফিল্ড</span></div>
+        <div class="demo-area">
+            <label>আপনার নাম :</label>
+            <input type="text" placeholder="যেমন: রাহিমা খাতুন">
+            <div class="info-text">✅ <strong>এইটা ইনপুট</strong> – টেক্সট টাইপ করার জায়গা।</div>
+        </div>
+    </div>
+
+    <!-- 2. TEXTAREA element -->
+    <div class="element-card">
+        <div class="element-label">📝 এইটা <code>&lt;textarea&gt;</code> এলিমেন্ট <span>বড় লেখার বাক্স</span></div>
+        <div class="demo-area">
+            <textarea rows="2" placeholder="এখানে বড় বক্তব্য, মন্তব্য লিখুন..."></textarea>
+            <div class="info-text">✅ <strong>এইটা টেক্সটএরিয়া</strong> – একাধিক লাইনের লেখার জন্য।</div>
+        </div>
+    </div>
+
+    <!-- 3. DATALIST + INPUT (datalist example) -->
+    <div class="element-card">
+        <div class="element-label">💡 এইটা <code>&lt;datalist&gt;</code> + <code>&lt;input&gt;</code> <span>সাজেশন সহ ইনপুট</span></div>
+        <div class="demo-area">
+            <input list="myFruits" placeholder="ফলের নাম টাইপ করুন...">
+            <datalist id="myFruits">
+                <option value="আম">
+                <option value="কাঁঠাল">
+                <option value="লিচু">
+                <option value="কলা">
+                <option value="আপেল">
+            </datalist>
+            <div class="info-text">🍎 <strong>এইটা ডাটালিস্ট</strong> – ইনপুটের নিচে সাজেশন দেখায়। উপরের <code>&lt;option&gt;</code> গুলো ডাটালিস্টের ভিতর আছে।</div>
+        </div>
+    </div>
+
+    <!-- 4. SELECT + OPTION + OPTGROUP -->
+    <div class="element-card">
+        <div class="element-label">🔽 এইটা <code>&lt;select&gt;</code> , <code>&lt;option&gt;</code> , <code>&lt;optgroup&gt;</code></div>
+        <div class="demo-area">
+            <select>
+                <optgroup label="🇧🇩 বাংলাদেশের জেলা">
+                    <option value="dhk">ঢাকা</option>
+                    <option value="ctg">চট্টগ্রাম</option>
+                    <option value="rsj">রাজশাহী</option>
+                </optgroup>
+                <optgroup label="🇮🇳 ভারতের রাজ্য">
+                    <option value="wb">পশ্চিমবঙ্গ</option>
+                    <option value="trip">ত্রিপুরা</option>
+                </optgroup>
+                <option value="other">অন্যান্য</option>
+            </select>
+            <div class="info-text">✅ <strong>এইটা সিলেক্ট + অপশন + অপ্টগ্রুপ</strong> – ড্রপডাউন মেনু। <code>&lt;option&gt;</code> এলিমেন্ট এখানে আছে, <code>&lt;optgroup&gt;</code> দিয়ে গ্রুপ করা।</div>
+        </div>
+    </div>
+
+    <!-- 5. FIELDSET + LEGEND (গ্রুপিং) -->
+    <div class="element-card">
+        <div class="element-label">🧩 এইটা <code>&lt;fieldset&gt;</code> ও <code>&lt;legend&gt;</code></div>
+        <div class="demo-area">
+            <fieldset style="border:2px solid #ffb347; border-radius: 20px; padding: 12px 18px;">
+                <legend style="background:#ffb347; padding:4px 16px; border-radius:30px; font-weight:bold;">⚡ এইটা Legend (শিরোনাম)</legend>
+                <label><input type="checkbox"> আমি পড়তে রাজি</label><br>
+                <label><input type="radio" name="agree"> হ্যাঁ</label>
+                <label><input type="radio" name="agree"> না</label>
+                <div class="info-text" style="margin-top: 8px;">✅ <strong>fieldset</strong> একাধিক এলিমেন্টকে ঘিরে রাখে, <strong>legend</strong> তার উপরে লেখা।</div>
+            </fieldset>
+        </div>
+    </div>
+
+    <!-- 6. BUTTON element -->
+    <div class="element-card">
+        <div class="element-label">🎛️ এইটা <code>&lt;button&gt;</code> এলিমেন্ট</div>
+        <div class="demo-area">
+            <button type="button" style="background:#2c7da0; color:white; width:auto; padding:8px 24px;">ক্লিক করুন (বাটন)</button>
+            <button type="reset" style="background:#ba2c1d; width:auto; margin-left:12px;">রিসেট</button>
+            <div class="info-text">✅ <strong>এইটা বাটন</strong> – ক্লিকযোগ্য বোতাম।</div>
+        </div>
+    </div>
+
+    <!-- 7. LABEL element (আলাদাভাবে দেখানো) -->
+    <div class="element-card">
+        <div class="element-label">🏷️ এইটা <code>&lt;label&gt;</code> এলিমেন্ট</div>
+        <div class="demo-area">
+            <label for="phoneInput">📞 মোবাইল নম্বর (label এর সাথে যুক্ত) : </label>
+            <input type="tel" id="phoneInput" placeholder="01XXXXXXXXX">
+            <div class="info-text">✅ <strong>এইটা লেবেল</strong> – ইনপুটের সাথে টেক্সট লিংক করে। উপরের "মোবাইল নম্বর" লেখাটাই লেবেল।</div>
+        </div>
+    </div>
+
+    <!-- 8. OUTPUT element (range + output) -->
+    <div class="element-card">
+        <div class="element-label">📊 এইটা <code>&lt;output&gt;</code> এলিমেন্ট</div>
+        <div class="demo-area">
+            <form oninput="sliderValue.value = amount.value">
+                <label>মান নির্বাচন করুন (রেঞ্জ): </label>
+                <input type="range" id="amount" name="amount" value="35" min="0" max="100">
+                <br>
+                <label>আউটপুট মান: </label>
+                <output name="sliderValue" id="sliderValue" style="background:#e9ecef; padding:5px 15px; border-radius:30px;">35</output>
+            </form>
+            <div class="info-text">✅ <strong>এইটা আউটপুট</strong> – রেঞ্জ স্লাইডারের মান লাইভ দেখাচ্ছে।</div>
+        </div>
+    </div>
+
+    <!-- 9. আরেকটি OPTION ও ডাটালিস্টের ভেতরের option দেখানো -->
+    <div class="element-card">
+        <div class="element-label">🔍 বিশেষ করে <code>&lt;option&gt;</code> এলিমেন্ট যেখানে থাকে</div>
+        <div class="demo-area">
+            <p>📌 <strong>অপশন</strong> ব্যবহার করা হয়েছে : </p>
+            <ul style="margin-left: 25px; line-height: 1.6;">
+                <li>✅ ডাটালিস্টের ভেতর (ফলের নাম: আম, কাঁঠাল, লিচু...)</li>
+                <li>✅ সিলেক্ট বক্সের ভেতর (ঢাকা, চট্টগ্রাম, পশ্চিমবঙ্গ ...)</li>
+                <li>✅ অপ্টগ্রুপের ভেতরেও থাকে অপশন</li>
+            </ul>
+            <div class="info-text">⭐ <strong>এইটা অপশন</strong> – প্রতিটি <code>&lt;option&gt;</code> একটি পছন্দের মান।</div>
+        </div>
+    </div>
+
+    <hr>
+    <footer>
+        🧠 এখানে <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;datalist&gt;</code>, <code>&lt;option&gt;</code>, <code>&lt;optgroup&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>, <code>&lt;output&gt;</code> সব এলিমেন্ট নামসহ দেখানো হয়েছে।
+    </footer>
+</div>
+</body>
+</html>

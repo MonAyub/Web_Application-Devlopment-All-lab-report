@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio vs Label+Radio - পার্থক্য বোঝার উদাহরণ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f7ff;
+            margin: 0;
+            padding: 30px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 24px;
+            padding: 25px 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #1e466e;
+            border-left: 5px solid #ff9800;
+            padding-left: 15px;
+        }
+        .demo-box {
+            background: #fff7e8;
+            border: 1px solid #ffe0a3;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .demo-title {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #b45f06;
+            margin-bottom: 15px;
+        }
+        .radio-group {
+            background: #fef4e8;
+            padding: 15px 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+        .radio-group p {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .note {
+            background: #e9f5ff;
+            padding: 12px 18px;
+            border-radius: 16px;
+            margin-top: 20px;
+            border-left: 4px solid #2c7da0;
+        }
+        .click-test {
+            background: #d9f0ec;
+            padding: 8px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        hr {
+            margin: 25px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #4a627a;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🧪 রেডিও বাটন : শুধু radio vs label সহ radio</h1>
+    <p style="font-size: 1.05rem;">নিচের দুটি গ্রুপে ক্লিক করে দেখুন পার্থক্য। <strong>লেখার উপর ক্লিক করুন</strong> – ফলাফল নিজেই বুঝে যাবেন।</p>
+
+    <!-- উদাহরণ ১: শুধু radio (কোনও label নেই) -->
+    <div class="demo-box">
+        <div class="demo-title">❌ গ্রুপ A: শুধু <code>&lt;input type="radio"&gt;</code> (label ছাড়া)</div>
+        <div class="radio-group">
+            <p>👉 আপনার পছন্দের ফল নির্বাচন করুন (শুধু ছোট বৃত্তে ক্লিক করুন):</p>
+            <input type="radio" name="fruitNoLabel" value="apple"> আপেল <br>
+            <input type="radio" name="fruitNoLabel" value="banana"> কলা <br>
+            <input type="radio" name="fruitNoLabel" value="mango"> আম
+        </div>
+        <div class="click-test">
+            ⚠️ <strong>চেষ্টা করুন:</strong> "আপেল", "কলা", "আম" – এই <u>লেখাগুলোতে ক্লিক করুন</u>। দেখবেন কিছু হয় না। <br>
+            ✅ শুধু ছোট গোল বৃত্তে ক্লিক করলেই সিলেক্ট হবে।
+        </div>
+    </div>
+
+    <!-- উদাহরণ ২: label + radio (সঠিক পদ্ধতি) -->
+    <div class="demo-box">
+        <div class="demo-title">✅ গ্রুপ B: <code>&lt;label&gt;</code> + <code>&lt;input type="radio"&gt;</code></div>
+        <div class="radio-group">
+            <p>👉 আপনার পছন্দের রং নির্বাচন করুন (লেখায় ক্লিক করলেও হবে):</p>
+            <label>
+                <input type="radio" name="colorWithLabel" value="red"> লাল
+            </label><br>
+            <label>
+                <input type="radio" name="colorWithLabel" value="green"> সবুজ
+            </label><br>
+            <label>
+                <input type="radio" name="colorWithLabel" value="blue"> নীল
+            </label>
+        </div>
+        <div class="click-test">
+            ✨ <strong>চেষ্টা করুন:</strong> "লাল", "সবুজ", "নীল" – এই <u>লেখাগুলোতে ক্লিক করুন</u>। দেখবেন রেডিও বাটন নিজে থেকেই সিলেক্ট হয়ে যাচ্ছে!
+        </div>
+    </div>
+
+    <!-- উদাহরণ ৩: label + for/id দিয়ে (আরেকটি পদ্ধতি) -->
+    <div class="demo-box">
+        <div class="demo-title">✅ গ্রুপ C: <code>&lt;label for="..."&gt;</code> + <code>id</code> (এটিও label-ই)</div>
+        <div class="radio-group">
+            <p>👉 পছন্দের প্রাণী (লেখায় ক্লিক করুন):</p>
+            <input type="radio" name="animal" id="cat">
+            <label for="cat">বিড়াল</label><br>
+            <input type="radio" name="animal" id="dog">
+            <label for="dog">কুকুর</label><br>
+            <input type="radio" name="animal" id="cow">
+            <label for="cow">গরু</label>
+        </div>
+        <div class="click-test">
+            ✨ এখানেও "বিড়াল", "কুকুর", "গরু" লেখায় ক্লিক করলেই রেডিও সিলেক্ট হয়।
+        </div>
+    </div>
+
+    <div class="note">
+        📌 <strong>মূল কথা:</strong>
+        <ul>
+            <li>শুধু <code>&lt;input type="radio"&gt;</code> → কেবল ছোট গোল জায়গায় ক্লিক কাজ করে।</li>
+            <li><code>&lt;label&gt;</code> ব্যবহার করলে → পাশের লেখায় ক্লিক করলেও রেডিও সিলেক্ট হয়। এতে ক্লিক করার এলাকা বড় হয়, আর স্ক্রিন রিডার ব্যবহারকারীরাও বুঝতে পারেন।</li>
+            <li>দুটো পদ্ধতি আছে: <code>&lt;label&gt; &lt;input&gt; টেক্সট &lt;/label&gt;</code> অথবা <code>&lt;input id="x"&gt; &lt;label for="x"&gt;টেক্সট&lt;/label&gt;</code></li>
+        </ul>
+    </div>
+    <footer>
+        🔁 উপরের গ্রুপ A-তে লেখায় ক্লিক করে দেখুন → সিলেক্ট হয় না। গ্রুপ B বা C-তে লেখায় ক্লিক করুন → সিলেক্ট হয়। এটাই পার্থক্য।
+    </footer>
+</div>
+</body>
+</html>
